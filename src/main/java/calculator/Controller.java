@@ -60,5 +60,6 @@ public class Controller {
     private void clearTextField(){
         builder.delete(0, builder.length());
         inputField.setText(null);
+        outputField.setText(null);
     }
 }
