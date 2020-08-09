@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import java.util.Objects;
 
 public class Controller {
 
@@ -40,11 +41,21 @@ public class Controller {
                     clearTextField();
                 } else if (newButton.getText().equals("=")){
                     setCalculationResultToOutput();
-                } else {
+                } else if (newButton.getText().equals("DEL")){
+                    removeProvidedText();
+                }else {
                     setTextToInputField(newButton);
                 }
             });
         }
+    }
+
+    private void removeProvidedText() {
+        int size = Objects.requireNonNullElse(builder.length(), 0);
+       if(size > 0) {
+           builder.delete(size-1, size);
+           inputField.setText(builder.toString());
+       }
     }
 
     private void setCalculationResultToOutput(){
