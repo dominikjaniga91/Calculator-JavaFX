@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.service.Calculator;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -13,6 +14,7 @@ public class Controller {
     @FXML private TextField inputField;
     @FXML private TextField outputField;
     private StringBuilder builder = new StringBuilder();
+    private Calculator calculator = new Calculator();
 
     public void initialize(){
         assignOnClickEventToAllButtons();
@@ -37,7 +39,7 @@ public class Controller {
                 if (newButton.isCancelButton()) {
                     clearTextField();
                 } else if (newButton.getText().equals("=")){
-                    assignTextToOutputField();
+                    setCalculationResultToOutput();
                 } else {
                     assignTextToInputField(newButton);
                 }
@@ -45,8 +47,9 @@ public class Controller {
         }
     }
 
-    private void assignTextToOutputField(){
-        outputField.setText(builder.toString());
+    private void setCalculationResultToOutput(){
+        int result = calculator.performCalculation(builder.toString());
+        outputField.setText(String.valueOf(result));
     }
 
     private void assignTextToInputField(Button button) {
