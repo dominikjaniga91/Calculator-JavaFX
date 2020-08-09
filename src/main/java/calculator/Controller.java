@@ -18,6 +18,15 @@ public class Controller {
         assignOnClickEventToAllButtons();
     }
 
+    /**
+     * Action iterate over list of GridPane children, in this case - buttons,
+     * and assign action depending on kind of button. There are four options.
+     * Cancel button clear text fields and string builder.
+     * Equal sign button set up provided numbers to output text
+     * field. Numeric and math sign buttons set up its value
+     * to input field.
+     */
+
     public void assignOnClickEventToAllButtons(){
 
         ObservableList<Node> buttons = mainGridPane.getChildren();
