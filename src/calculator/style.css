@@ -1,0 +1,21 @@
+
+.calculatorButton {
+
+    -fx-background-color: lightsteelblue;
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-background-insets: 3;
+    -fx-font-size: 14;
+}
+
+.calculatorButton:hover {
+    -fx-cursor: hand;
+}
+
+#inputField {
+    -fx-background-color: white;
+}
+
+#outputField {
+    -fx-background-color: white;
+}

@@ -16,12 +16,12 @@
     <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <top>
             <VBox>
-                <TextField prefWidth="Infinity" prefHeight="50" alignment="CENTER_RIGHT" editable="false">
+                <TextField fx:id="outputField" prefWidth="Infinity" prefHeight="50" alignment="CENTER_RIGHT" editable="false">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </TextField>
-                <TextField alignment="CENTER_RIGHT" prefHeight="50" promptText="0">
+                <TextField fx:id="inputField" alignment="CENTER_RIGHT" prefHeight="50" promptText="0">
                     <font>
                         <Font size="30.0" />
                     </font>
@@ -43,25 +43,25 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
-                <Button maxHeight="Infinity" maxWidth="Infinity"  text="7" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="8" GridPane.columnIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="9" GridPane.columnIndex="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="\%" GridPane.columnIndex="3" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="4" GridPane.rowIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="X" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="1" GridPane.rowIndex="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="CE" GridPane.columnIndex="4" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="/" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="=" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.rowSpan="2" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="." GridPane.rowIndex="3" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="DEL" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Button styleClass="calculatorButton" maxHeight="Infinity" maxWidth="Infinity"  text="7" />
+                <Button styleClass="calculatorButton" text="8" GridPane.columnIndex="1" />
+                <Button styleClass="calculatorButton" text="9" GridPane.columnIndex="2" />
+                <Button styleClass="calculatorButton" text="\%" GridPane.columnIndex="3" />
+                <Button styleClass="calculatorButton" text="4" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="X" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="1" GridPane.rowIndex="2" />
+                <Button styleClass="calculatorButton" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button styleClass="calculatorButton" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Button styleClass="calculatorButton" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button styleClass="calculatorButton" text="CE" GridPane.columnIndex="4" />
+                <Button styleClass="calculatorButton" text="/" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="=" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                <Button styleClass="calculatorButton" text="." GridPane.rowIndex="3" />
+                <Button styleClass="calculatorButton" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button styleClass="calculatorButton" text="DEL" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Button styleClass="calculatorButton" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             </GridPane>
         </center>
     </BorderPane>
