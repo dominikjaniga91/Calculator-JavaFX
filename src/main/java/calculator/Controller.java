@@ -41,7 +41,7 @@ public class Controller {
                 } else if (newButton.getText().equals("=")){
                     setCalculationResultToOutput();
                 } else {
-                    assignTextToInputField(newButton);
+                    setTextToInputField(newButton);
                 }
             });
         }
@@ -52,7 +52,7 @@ public class Controller {
         outputField.setText(String.valueOf(result));
     }
 
-    private void assignTextToInputField(Button button) {
+    private void setTextToInputField(Button button) {
         builder.append(button.getText());
         inputField.setText(builder.toString());
     }
