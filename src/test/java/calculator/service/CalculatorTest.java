@@ -25,8 +25,8 @@ public class CalculatorTest {
 
     @Test
     void shouldReturnListWithMathSymbols(){
-        int expected = 3;
-        int actual = calculator.getMathSymbols("5+4-2+4").size();
+        List<String> expected = List.of("+","-","+");
+        List<String> actual = calculator.getMathSymbols("5+4-2+4");
         Assertions.assertEquals(expected, actual);
     }
 
