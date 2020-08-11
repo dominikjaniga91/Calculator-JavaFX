@@ -1,5 +1,10 @@
 package calculator.service;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Calculator {
 
 
@@ -13,5 +18,15 @@ public class Calculator {
         }
 
         return result;
+    }
+
+    private List<Double> getNumbers(String equation) {
+
+        String[] temp = equation.split("[^\\d.?]");
+        System.out.println(Arrays.toString(temp));
+        return Stream.of(temp)
+                .filter(number -> !number.isEmpty())
+                .map(Double::parseDouble)
+                .collect(Collectors.toList());
     }
 }
