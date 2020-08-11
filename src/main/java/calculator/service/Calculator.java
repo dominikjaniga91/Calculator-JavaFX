@@ -29,4 +29,12 @@ public class Calculator {
                 .map(Double::parseDouble)
                 .collect(Collectors.toList());
     }
+
+    private List<String> getMathSymbols(String equation) {
+
+        String[] temp = equation.split("[\\d]");
+        return Stream.of(temp)
+                .filter(sign -> !sign.isEmpty())
+                .collect(Collectors.toList()) ;
+    }
 }
