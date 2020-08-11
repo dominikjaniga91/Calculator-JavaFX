@@ -20,7 +20,7 @@ public class Calculator {
         return result;
     }
 
-    private List<Double> getNumbers(String equation) {
+    protected List<Double> getNumbers(String equation) {
 
         String[] temp = equation.split("[^\\d.?]");
         System.out.println(Arrays.toString(temp));
