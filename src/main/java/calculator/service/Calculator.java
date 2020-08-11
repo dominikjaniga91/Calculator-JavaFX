@@ -30,7 +30,7 @@ public class Calculator {
                 .collect(Collectors.toList());
     }
 
-    private List<String> getMathSymbols(String equation) {
+    protected List<String> getMathSymbols(String equation) {
 
         String[] temp = equation.split("[\\d]");
         return Stream.of(temp)
