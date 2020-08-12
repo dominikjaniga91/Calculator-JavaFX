@@ -35,15 +35,15 @@ public class Calculator {
     private void divideNumbers(){
         while (symbols.contains("/")){
             int index = symbols.indexOf("/");
-            int result = numbers.get(index) * numbers.get(index+1);
+            int result = numbers.get(index) / numbers.get(index+1);
             removeElements(index, result);
         }
     }
 
     private void subtractNumbers(){
-        while (symbols.contains("+")){
-            int index = symbols.indexOf("+");
-            int result = numbers.get(index) + numbers.get(index+1);
+        while (symbols.contains("-")){
+            int index = symbols.indexOf("-");
+            int result = numbers.get(index) - numbers.get(index+1);
             removeElements(index, result);
         }
     }

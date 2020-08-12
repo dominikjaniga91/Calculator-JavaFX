@@ -3,6 +3,8 @@ package calculator.service;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 
@@ -16,10 +18,15 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
 
-    @Test
-    void shouldReturnAppropriateResult_afterPlusNumbers(){
-        int expected = 12;
-        int actual = calculator.performCalculation("7+5");
+    @ParameterizedTest
+    @CsvSource({
+            "5-6*4+2-1, -18",
+            "2+4-3*2-4, -4",
+            "6*3+2-1, 19",
+            "2*8-6*2+3, 7",
+    })
+    void shouldReturnAppropriateResult_afterPerformCalculation(String equation, int expected){
+        int actual = calculator.performCalculation(equation);
         Assertions.assertEquals(expected, actual);
     }
 
