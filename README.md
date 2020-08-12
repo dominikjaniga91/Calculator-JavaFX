@@ -1,8 +1,9 @@
 # Calculator-JavaFX
 
-Simple calculator with basics operations
+Simple calculator with basic operations
 
 #### Applied technologies:
+
 * Java 11
 * JavaFX
 * Maven
