@@ -18,6 +18,7 @@ public class Calculator {
 
         multiplyNumbers();
         divideNumbers();
+        subtractNumbers();
         addNumbers();
 
         return Objects.requireNonNullElse(numbers.get(0), 0);
@@ -35,6 +36,14 @@ public class Calculator {
         while (symbols.contains("/")){
             int index = symbols.indexOf("/");
             int result = numbers.get(index) * numbers.get(index+1);
+            removeElements(index, result);
+        }
+    }
+
+    private void subtractNumbers(){
+        while (symbols.contains("+")){
+            int index = symbols.indexOf("+");
+            int result = numbers.get(index) + numbers.get(index+1);
             removeElements(index, result);
         }
     }
