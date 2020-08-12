@@ -21,7 +21,13 @@ public class Calculator {
         subtractNumbers();
         addNumbers();
 
-        return Objects.requireNonNullElse(numbers.get(0), 0);
+        return getResult();
+    }
+
+    private Number getResult(){
+        Number value = Objects.requireNonNullElse(numbers.get(0), 0);
+        String temp = String.valueOf(value);
+        return temp.endsWith(".0") ? value.intValue() : value;
     }
 
     private void multiplyNumbers(){
