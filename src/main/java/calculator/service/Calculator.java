@@ -17,6 +17,7 @@ public class Calculator {
         symbols = getMathSymbols(equation);
 
         multiplyNumbers();
+        divideNumbers();
         addNumbers();
 
         return Objects.requireNonNullElse(numbers.get(0), 0);
@@ -24,7 +25,15 @@ public class Calculator {
 
     private void multiplyNumbers(){
         while (symbols.contains("*")){
-            int index = symbols.indexOf("+*");
+            int index = symbols.indexOf("*");
+            int result = numbers.get(index) * numbers.get(index+1);
+            removeElements(index, result);
+        }
+    }
+
+    private void divideNumbers(){
+        while (symbols.contains("/")){
+            int index = symbols.indexOf("/");
             int result = numbers.get(index) * numbers.get(index+1);
             removeElements(index, result);
         }
