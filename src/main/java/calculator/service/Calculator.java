@@ -2,22 +2,37 @@ package calculator.service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Calculator {
 
+    private List<Integer> numbers;
+    private List<String> symbols;
 
     public int performCalculation(String equation) {
 
-        int result = 0;
+        numbers =  getNumbers(equation);
+        symbols = getMathSymbols(equation);
 
-        if (equation.contains("+")){
-            String[] numbers = equation.split("\\+");
-            result = Integer.parseInt(numbers[0]) +  Integer.parseInt(numbers[1]);
+        addNumbers();
+
+        return Objects.requireNonNullElse(numbers.get(0), 0);
+    }
+
+    private void addNumbers(){
+        while (symbols.contains("+")){
+            int index = symbols.indexOf("+");
+            int result = numbers.get(index) + numbers.get(index+1);
+            removeElements(index, result);
         }
+    }
 
-        return result;
+    private void removeElements(int index, int result){
+        numbers.set(index, result);
+        symbols.remove(index);
+        numbers.remove(index+1);
     }
 
     protected List<Integer> getNumbers(String equation) {
