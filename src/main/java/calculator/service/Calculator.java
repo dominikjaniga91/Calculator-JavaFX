@@ -81,7 +81,7 @@ public class Calculator {
 
         String[] temp = equation.split("[\\d]");
         return Stream.of(temp)
-                .filter(sign -> !sign.isEmpty())
+                .filter(sign -> !sign.isEmpty() && !sign.equals("."))
                 .collect(Collectors.toList()) ;
     }
 }
