@@ -71,7 +71,6 @@ public class Calculator {
     protected List<Double> getNumbers(String equation) {
 
         String[] temp = equation.split("[^\\d.?]");
-        System.out.println(Arrays.toString(temp));
         return Stream.of(temp)
                 .filter(number -> !number.isEmpty())
                 .map(Double::parseDouble)
