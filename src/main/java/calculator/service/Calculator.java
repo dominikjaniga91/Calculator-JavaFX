@@ -20,13 +20,13 @@ public class Calculator {
         return result;
     }
 
-    protected List<Double> getNumbers(String equation) {
+    protected List<Integer> getNumbers(String equation) {
 
         String[] temp = equation.split("[^\\d.?]");
         System.out.println(Arrays.toString(temp));
         return Stream.of(temp)
                 .filter(number -> !number.isEmpty())
-                .map(Double::parseDouble)
+                .map(Integer::parseInt)
                 .collect(Collectors.toList());
     }
 
