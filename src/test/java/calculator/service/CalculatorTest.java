@@ -26,7 +26,7 @@ public class CalculatorTest {
             "2*8-6*2+3, 7",
     })
     void shouldReturnAppropriateResult_afterPerformCalculation(String equation, int expected){
-        int actual = calculator.performCalculation(equation);
+        Number actual = calculator.performCalculation(equation);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -39,8 +39,8 @@ public class CalculatorTest {
 
     @Test
     void shouldReturnListWithNumbers(){
-        List<Integer> expected = List.of(5,4,2,4);
-        List<Integer> actual = calculator.getNumbers("5+4-2+4");
+        List<Double> expected = List.of(5d,4d,2d,4d);
+        List<Double> actual = calculator.getNumbers("5+4-2+4");
         Assertions.assertEquals(expected, actual);
     }
 }

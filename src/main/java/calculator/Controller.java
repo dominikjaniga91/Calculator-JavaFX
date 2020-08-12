@@ -59,7 +59,7 @@ public class Controller {
     }
 
     private void setCalculationResultToOutput(){
-        int result = calculator.performCalculation(builder.toString());
+        Number result = calculator.performCalculation(builder.toString());
         outputField.setText(String.valueOf(result));
     }
 

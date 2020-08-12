@@ -8,10 +8,10 @@ import java.util.stream.Stream;
 
 public class Calculator {
 
-    private List<Integer> numbers;
+    private List<Double> numbers;
     private List<String> symbols;
 
-    public int performCalculation(String equation) {
+    public Number performCalculation(String equation) {
 
         numbers =  getNumbers(equation);
         symbols = getMathSymbols(equation);
@@ -27,7 +27,7 @@ public class Calculator {
     private void multiplyNumbers(){
         while (symbols.contains("*")){
             int index = symbols.indexOf("*");
-            int result = numbers.get(index) * numbers.get(index+1);
+            double result = numbers.get(index) * numbers.get(index+1);
             removeElements(index, result);
         }
     }
@@ -35,7 +35,7 @@ public class Calculator {
     private void divideNumbers(){
         while (symbols.contains("/")){
             int index = symbols.indexOf("/");
-            int result = numbers.get(index) / numbers.get(index+1);
+            double result = numbers.get(index) / numbers.get(index+1);
             removeElements(index, result);
         }
     }
@@ -43,7 +43,7 @@ public class Calculator {
     private void subtractNumbers(){
         while (symbols.contains("-")){
             int index = symbols.indexOf("-");
-            int result = numbers.get(index) - numbers.get(index+1);
+            double result = numbers.get(index) - numbers.get(index+1);
             removeElements(index, result);
         }
     }
@@ -51,24 +51,24 @@ public class Calculator {
     private void addNumbers(){
         while (symbols.contains("+")){
             int index = symbols.indexOf("+");
-            int result = numbers.get(index) + numbers.get(index+1);
+            double result = numbers.get(index) + numbers.get(index+1);
             removeElements(index, result);
         }
     }
 
-    private void removeElements(int index, int result){
+    private void removeElements(int index, double result){
         numbers.set(index, result);
         symbols.remove(index);
         numbers.remove(index+1);
     }
 
-    protected List<Integer> getNumbers(String equation) {
+    protected List<Double> getNumbers(String equation) {
 
         String[] temp = equation.split("[^\\d.?]");
         System.out.println(Arrays.toString(temp));
         return Stream.of(temp)
                 .filter(number -> !number.isEmpty())
-                .map(Integer::parseInt)
+                .map(Double::parseDouble)
                 .collect(Collectors.toList());
     }
 
