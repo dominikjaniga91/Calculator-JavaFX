@@ -16,9 +16,18 @@ public class Calculator {
         numbers =  getNumbers(equation);
         symbols = getMathSymbols(equation);
 
+        multiplyNumbers();
         addNumbers();
 
         return Objects.requireNonNullElse(numbers.get(0), 0);
+    }
+
+    private void multiplyNumbers(){
+        while (symbols.contains("*")){
+            int index = symbols.indexOf("+*");
+            int result = numbers.get(index) * numbers.get(index+1);
+            removeElements(index, result);
+        }
     }
 
     private void addNumbers(){
