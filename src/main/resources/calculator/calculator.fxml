@@ -50,7 +50,7 @@
                 <Button styleClass="calculatorButton" text="4" GridPane.rowIndex="1" />
                 <Button styleClass="calculatorButton" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Button styleClass="calculatorButton" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Button styleClass="calculatorButton" text="X" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button styleClass="calculatorButton" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                 <Button styleClass="calculatorButton" text="1" GridPane.rowIndex="2" />
                 <Button styleClass="calculatorButton" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Button styleClass="calculatorButton" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
